@@ -2,12 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/t-edu.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>asqarslanov@gmail.com</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <main>
+        <div class="ui">
+          <div class="input-form">
+            <div class="field">
+              <label for="input-greeting">Greeting</label>
+              <input id="input-greeting" name="input-greeting" />
+            </div>
+            <div class="field">
+              <label for="input-name">Name</label>
+              <input id="input-name" name="input-name" />
+            </div>
+            <div class="field">
+              <label for="input-role">Role</label>
+              <input id="input-role" name="input-role" />
+            </div>
+          </div>
+          <button id="download-button">Download</button>
+        </div>
+
+        <div id="bento-flexbox">
+          <img class="profile-img" src="/t-edu.png" />
+          <article class="name-box">
+            <span class="greeting-phrase"></span>
+            <div class="your-info">
+              <h1 class="name"></h1>
+              <h3 class="role"></h3>
+            </div>
+          </article>
+          <article class="lenguages-box">
+            <div class="title">
+              <h2 class="name-title">Languages</h2>
+            </div>
+            <div class="list-lenguages">
+              <ul class="name-lenguage"></ul>
+              <ul class="level-lenguage"></ul>
+            </div>
+          </article>
+          <article class="experience-box">
+            <div class="title">
+              <h2 class="name-title">Experience</h2>
+            </div>
+            <ul class="job-list"></ul>
+          </article>
+          <!-- <article class="tools-box">
+            <div class="title">
+              <h2 class="name-title">Tools</h2>
+            </div>
+          </article> -->
+          <article class="education-box"></article>
+          <div class="extra-box">
+            <article class="interests-box">
+              <div class="title"><h2 class="name-title">Interests</h2></div>
+              <ul class="content"></ul>
+            </article>
+            <article class="contact">
+              <p class="message"></p>
+              <address class="contact-details"></address>
+            </article>
+          </div>
+        </div>
+      </main>
+    </div>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

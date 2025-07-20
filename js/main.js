@@ -1,25 +1,19 @@
+import html2pdf from "html2pdf.js";
+import "../css/modern-normalize.css";
 import "../css/style.css";
-import javascriptLogo from "../javascript.svg";
-import { setupCounter } from "./counter.js";
-import viteLogo from "/vite.svg";
+import { globalState } from "./global-state";
+import { initInput } from "./input";
+import { initRipples } from "./ripple";
+import { updateUi } from "./update";
 
-document.querySelector("#app").innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a
-      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-      target="_blank"
-    >
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">Click on the Vite logo to learn more</p>
-  </div>
-`;
+main();
+function main() {
+  initInput();
+  updateUi(globalState());
+  initRipples();
+}
 
-setupCounter(document.querySelector("#counter"));
+document.getElementById("download-button").onclick = () => {
+  const app = document.getElementById("bento-flexbox");
+  html2pdf(app, { margin: 6, filename: "cv.pdf", html2canvas: { scale: 5 } });
+};
